@@ -1,0 +1,107 @@
+type: fashion_mnist
+attack: SADBA_9
+SADBA: true
+is_poison: true
+
+total_clients: 100
+MPC: 0.2
+batch_size: 64
+setting: [3,2,2,9]
+is_random_namelist: true
+is_random_adversary: true
+
+training_mode: true
+is_ASR_t: true
+#test_ASR-t: true
+optimize_adversarial_local_training: true
+is_random_choice_in_fixed_mode: false
+
+vis_trigger_split_test: false
+save_model: true
+folder_path: ./saved_models/
+home_path: ./data/Dataset
+
+#相对路径 Appendix/test1_data/SADBA_9/NC=100;m_shape=[3, 2, 2, 9];MPC=0.2
+save_on_epochs: [50,100,200,300,500,600,1000]
+show_first_malicious_client_backdoor_samples: true
+update_rounds: 1
+debug: false
+num_temp_samples: 6000
+full_combination_trigger: true
+best_trigger_position: false
+is_static_pos: false
+pos: [17, 5]
+unify_trigger_pos: false
+optimal_sample_selection: false
+trigger_distribution_strategy: 2
+trigger_pattern: 9
+target_label: 7 #
+poison_rate: 0.4
+append_poisoned_data: false
+sampling_dirichlet: false
+dirichlet_alpha: 10
+epochs: 300
+baseline: false
+aggr_epoch_interval: 1
+#global_setting
+gloabl_learning_rate: 0.1
+#global_epoch: 3
+batch_track_distance: false
+vis_train: false
+num_select_clients: 10
+aggregation_methods: 'mean'
+#pretrained clean model:
+resumed_model: true
+resumed_model_path: ./saved_models/model_last.pt.tar.best
+reset_epoch: true
+
+test_batch_size: 1000
+poison_lr: 0.05
+poison_internal_poison_epochs: 10
+poison_milestones: [3,6]
+u1: 5
+u2: 1
+alpha_loss: 1
+poison_step_lr: true
+scale_weights_poison: 100
+lr: 0.01
+local_epoch: 1
+vis_train_batch_loss: false
+test_pos: [0,0]
+momentum: 0.9
+decay: 0.0005
+
+# single shot - distributed attack:
+0_poison_epochs: [101]
+1_poison_epochs: [216,101]
+2_poison_epochs: [218,101]
+3_poison_epochs: [220,101]
+4_poison_epochs: [222,101]
+5_poison_epochs: [224,101]
+6_poison_epochs: [226,101]
+7_poison_epochs: [228,101]
+8_poison_epochs: [230,101]
+9_poison_epochs: [232,101]
+10_poison_epochs: [234,101]
+11_poison_epochs: [236,101]
+12_poison_epochs: [238,101]
+13_poison_epochs: [240,101]
+14_poison_epochs: [201,101]
+15_poison_epochs: [201,216,101]
+16_poison_epochs: [201,218,101]
+17_poison_epochs: [201,220,101]
+18_poison_epochs: [201,222,101]
+19_poison_epochs: [201,224,100]
+20_poison_epochs: [201,226,100]
+#poison_epochs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101, 12, 22, 32, 42, 52, 62, 72, 82, 92, 102, 112, 122, 132, 142, 152, 162, 172, 182, 192, 13, 23, 33, 43, 53, 63, 73, 83, 93, 103, 113, 123, 173, 183, 193, 14, 24, 34, 44, 54, 64, 74, 84, 94]
+poison_epochs: [42, 22, 32, 2, 192, 142, 91, 23, 10, 7, 73, 122, 113, 150, 152, 53, 16, 13, 123, 183, 24, 21, 38, 190, 33, 43, 103, 12, 110, 18, 11, 170, 60, 36, 6, 4, 180, 54, 9, 162, 93, 17, 62, 40, 37, 193, 19, 3, 183, 5, 84, 112, 142, 83, 132, 39, 31, 1, 8, 102, 120, 193, 174, 174, 100, 34, 14, 74, 25, 2, 9, 15, 22, 170, 130, 92, 130, 183, 130, 2, 152, 53, 190, 132, 130, 100, 192, 84, 53, 21, 18, 10, 92] #random poison
+#poison_epochs1: [99, 1, 43, 52, 28, 5, 68, 97, 14, 91, 26, 81, 70, 54, 48, 4, 95, 17, 66, 37, 20, 88, 77, 89, 33, 76, 58, 6, 59, 2,115,120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180, 186, 192, 198, 202, 208, 214, 220, 226, 232]
+#poison_epochs2: [99, 1, 43, 52, 28, 5, 68, 97, 14, 91, 26, 81, 70, 54, 48, 4, 95, 17, 66, 37, 20, 88, 77, 89, 33, 76, 58, 6, 59, 2]
+#poison_epochs3: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+#                21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+#                41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 ,59, 60,
+#                61, 62, 63, 64, 65, 66, 67, 68, 69, 70]
+test_trigger_indices: [0,1,2,3,4,5,6,7,8]
+diff_privacy: false
+s_norm: 300
+sigma: 0.00001
