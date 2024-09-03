@@ -2,7 +2,7 @@
 This repo contains the implementation for the paper "SADBA: Self-Adaptive Distributed Backdoor Attack against Federated Learning".
 
 <p align="center">
-  <img src="overview.png" alt="Overview of self-adaptive distributed backdoor attack (SADBA) in FL."/>
+  <img src="overview.png" />
   <br>
   <span>Figure 1: Overview of self-adaptive distributed backdoor attack (SADBA) in FL.</span>
 </p>
