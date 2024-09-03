@@ -1,7 +1,14 @@
 # SADBA
-This repo is implementation for the paper "SADBA: Self-Adaptive Distributed Backdoor Attack against Federated Learning".
+This repo contains the implementation for the paper "SADBA: Self-Adaptive Distributed Backdoor Attack against Federated Learning".
 
-Figure 1: Overview of self-adaptive distributed backdoor attack (SADBA) in FL.
+<p align="center">
+  <img src="overview.png" alt="Overview of self-adaptive distributed backdoor attack (SADBA) in FL."/>
+  <br>
+  <span>Figure 1: Overview of self-adaptive distributed backdoor attack (SADBA) in FL.</span>
+</p>
+
+
+
 ## Requirements
 ```bash
 Python >=3.8
@@ -10,9 +17,10 @@ NumPy >= 1.21.5
 ```
 
 ## Datasets
-Fahion-MNIST
+The experiment in this repository utilizes the Fashion-MNIST dataset.
 
 ## Folder Structure
+The repository is organized as follows:
 ```bash
 .
 ├── data                        # Data Storage
@@ -31,6 +39,7 @@ Fahion-MNIST
 ```
 
 ## How to run:
+To start the experiment, simply run the following command:
 ```bash
 python main.py
 ```
